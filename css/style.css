@@ -1566,9 +1566,9 @@ body.light hr.separator {
 }
 
 @media (max-width: 576px) {
-  .btn {
+  /* .btn {
     font-size: 14px;
-  }
+  } */
 
   body {
     font-size: 14px;
@@ -1756,5 +1756,26 @@ body.light hr.separator {
 
   .separator.mt-1 {
     margin-top: 35px !important;
+  }
+}
+@media (max-width: 400px) {
+  .btn {
+    box-shadow: none !important;
+    border-radius: 26px;
+    font-weight: 600;
+    height: 39px !important;
+    line-height: 46px;
+    font-size: 9px !important;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 0 30px;
+    outline: none !important;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+    border: 0;
+    white-space: nowrap !important;
   }
 }
