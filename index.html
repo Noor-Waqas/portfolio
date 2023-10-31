@@ -166,12 +166,13 @@
                         using Bootstrap, Ant Design, and Material-UI.</p>
                     <div style="display: flex;gap: 10px;">
                         <a href="about.html" class="btn btn-about">read more</a>
-                        <a href="#" class="btn btn-download" download="/cv/Waqas.pdf">Download CV</a>
+                        <a id="downloadCv" class="btn btn-download" style="color: white;">Download CV</a>
                         <a href="https://www.linkedin.com/in/mianmuhammadwaqasiqbal/"
                             class="btn btn-about fa fa-linkedin-square">linkedin</a>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
     <!-- Main Content Ends -->
@@ -189,6 +190,31 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/custom.js"></script>
+
+
+    <script>
+        document.getElementById("downloadCv").addEventListener("click", async function () {
+            try {
+                const response = await axios.get('/cv/Waqas.pdf', {
+                    responseType: 'blob', // Request blob data
+                });
+                const url = window.URL.createObjectURL(new Blob([response.data]));
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Waqas.pdf'; // specify the file name
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                // Cleanup: remove the temporary link and URL object
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </body>
 
