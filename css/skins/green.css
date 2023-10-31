@@ -33,9 +33,9 @@ body.light .header ul.icon-menu li.icon-box:hover,
 .header .icon-box h2,
 .home .color-block,
 .title-section hr,
-/* .portfolio .slideshow .carousel-indicators li.active {
+.portfolio .slideshow .carousel-indicators li.active {
   background: linear-gradient(to bottom, #00d300 43%, #009900 100%);
-} */
+}
 .contact .contactform input[type="text"]:focus,
 .contact .contactform input[type="email"]:focus,
 .contact .contactform textarea:focus,
